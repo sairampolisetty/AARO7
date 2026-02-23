@@ -6,18 +6,20 @@ import { Linkedin, Twitter, ChevronLeft, ChevronRight } from "lucide-react";
 // The data for the leadership carousel
 const founders = [
     {
-        name: "Meet Our Founder.",
-        role: "Visionary & CEO",
+        name: "Kritarth Pattnaik",
+        role: "Founder",
         quote: "The future belongs to those who don't just understand models, but who know how to architect ecosystems around them. We built AARO7 to bridge the critical gap between research and enterprise reality.",
         desc: "With over a decade of experience in deploying scalable intelligence platforms, our leadership is dedicated to pushing the boundaries of what's possible in the AI space.",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2574&auto=format&fit=crop"
+        image: "/kritharth_sir.png",
+        linkedin: "https://www.linkedin.com/in/kritarth-pattnaik-a49aa485/"
     },
     {
-        name: "Founder's Perspective.",
-        role: "Technical Architect",
+        name: "Aravind Singh",
+        role: "Co-Founder",
         quote: "True enterprise AI requires robust retrieval pipelines and deterministic security. We are focused on resolving technical debt and building the definitive intelligence layer.",
         desc: "Engineering the invisible layers that make frontier models reliable for Fortune 500s. We don't just adopt standards, we architect them.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop" // Professional tech lead placeholder
+        image: "/aravind_sir.png",
+        linkedin: "https://www.linkedin.com/in/aksjat/"
     }
 ];
 
@@ -44,11 +46,11 @@ export default function Founder() {
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-20">
 
                     {/* Image Column - Crossfade */}
-                    <div className="w-full md:w-1/2 flex justify-center md:justify-end relative h-[320px] sm:h-[380px] md:h-[500px] lg:h-[600px]">
+                    <div className="w-full md:w-1/2 flex justify-center md:items-center relative h-[250px] sm:h-[300px] md:h-[400px]">
                         {founders.map((founder, idx) => (
                             <div
                                 key={idx}
-                                className={`absolute top-0 right-auto md:right-0 w-[85vw] max-w-[320px] sm:max-w-[380px] md:max-w-none md:w-full h-[320px] sm:h-[380px] md:h-[500px] lg:h-[600px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden border border-foreground/10 shadow-2xl transition-opacity duration-1000 ${activeIndex === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                                className={`absolute top-0 right-auto md:right-4 lg:right-10 w-[220px] max-w-[250px] sm:w-[280px] sm:max-w-[300px] md:w-[320px] lg:w-[360px] md:max-w-none h-[250px] sm:h-[300px] md:h-[360px] lg:h-[400px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-foreground/10 shadow-2xl transition-opacity duration-1000 ${activeIndex === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                             >
                                 <div
                                     className="absolute inset-0 bg-cover bg-center transition-transform duration-[10000ms] ease-linear"
@@ -85,7 +87,7 @@ export default function Founder() {
                                     </p>
 
                                     <div className="flex gap-3 md:gap-4">
-                                        <a href="#" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                                        <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
                                             <Linkedin size={18} className="md:w-[20px] md:h-[20px]" />
                                         </a>
                                         <a href="#" className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground/5 border border-foreground/10 flex items-center justify-center text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
