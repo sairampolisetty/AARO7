@@ -30,6 +30,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Enforce strict scroll snapping for mobile carousels */
+.snap-mandatory>* {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
 /* Global Scrollbar Customization */
 * {
   scrollbar-width: thin;

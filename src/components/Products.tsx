@@ -39,13 +39,18 @@ export default function Products() {
 
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: -window.innerWidth * 0.8, behavior: 'smooth' });
+            // Scroll by exactly one card width + gap (approx 85vw + gap)
+            const gap = 12; // 3 * 4px (gap-3 in tailwind)
+            const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || window.innerWidth * 0.85;
+            scrollContainerRef.current.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
         }
     };
 
     const scrollRight = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: window.innerWidth * 0.8, behavior: 'smooth' });
+            const gap = 12;
+            const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || window.innerWidth * 0.85;
+            scrollContainerRef.current.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
         }
     };
 
@@ -62,7 +67,11 @@ export default function Products() {
                         ref={scrollContainerRef}
                         onScroll={checkScroll}
                         className="flex overflow-x-auto md:flex-row md:justify-center gap-3 md:gap-10 place-items-center snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide w-full px-4 md:px-0"
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                        style={{
+                            scrollbarWidth: 'none',
+                            msOverflowStyle: 'none',
+                            scrollSnapType: 'x mandatory' // Force strict snapping
+                        }}
                     >
                         {products.map((product, idx) => (
                             <div

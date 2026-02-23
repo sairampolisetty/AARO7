@@ -42,14 +42,17 @@ export default function AIEngine() {
 
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
-            // Scroll by approximate card width
-            scrollContainerRef.current.scrollBy({ left: -window.innerWidth * 0.8, behavior: 'smooth' });
+            const gap = 16; // gap-4 
+            const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || window.innerWidth * 0.85;
+            scrollContainerRef.current.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
         }
     };
 
     const scrollRight = () => {
         if (scrollContainerRef.current) {
-            scrollContainerRef.current.scrollBy({ left: window.innerWidth * 0.8, behavior: 'smooth' });
+            const gap = 16;
+            const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || window.innerWidth * 0.85;
+            scrollContainerRef.current.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
         }
     };
 
@@ -69,7 +72,11 @@ export default function AIEngine() {
                     ref={scrollContainerRef}
                     onScroll={checkScroll}
                     className="flex md:flex-col overflow-x-auto md:overflow-visible gap-4 md:gap-10 w-full px-4 md:px-6 snap-x snap-mandatory pb-8 md:pb-0 scrollbar-hide"
-                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                    style={{
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                        scrollSnapType: 'x mandatory' // Force strict snapping
+                    }}
                 >
                     {cards.map((card, idx) => (
                         <div
