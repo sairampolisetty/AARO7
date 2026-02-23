@@ -29,8 +29,8 @@ export default function Mission() {
         words.forEach(word => {
             const span = document.createElement("span");
             span.innerText = word + " ";
-            // Start with text-gray-700 equivalent
-            span.className = "text-[#374151] transition-colors duration-300";
+            // Start with light text color for light bg
+            span.className = "text-text-secondary/30 transition-colors duration-300";
             textRef.current?.appendChild(span);
         });
 
@@ -38,7 +38,8 @@ export default function Mission() {
 
         const ctx = gsap.context(() => {
             gsap.to(spans, {
-                color: "#FFFFFF",
+                // Animate to dark foreground color for readability
+                color: "#2F2F2F",
                 stagger: 0.1,
                 ease: "none",
                 scrollTrigger: {

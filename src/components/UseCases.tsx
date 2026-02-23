@@ -85,10 +85,10 @@ export default function UseCases() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#020308] py-8 md:py-10 border-y border-white/5 relative z-20 overflow-hidden">
+        <section ref={sectionRef} className="w-full bg-background py-8 md:py-10 border-y border-foreground/5 relative z-20 overflow-hidden">
             <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
                 <div className="mb-6 md:mb-20 text-center w-full px-4 md:px-6">
-                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-heading font-black text-white leading-tight">Proven Impact.</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-heading font-black text-foreground leading-tight">Proven Impact.</h2>
                     <p className="text-[10px] sm:text-sm md:text-lg lg:text-xl text-primary mt-2 md:mt-4 tracking-widest font-sans font-medium uppercase break-words">Hard Metrics & Quantifiable ROI</p>
                 </div>
 
@@ -101,11 +101,11 @@ export default function UseCases() {
                             return (
                                 <div
                                     key={idx}
-                                    className="w-full min-h-[180px] md:min-h-[360px] bg-[#0c0f1c] border border-white/10 rounded-[1rem] md:rounded-[2rem] p-4 md:p-10 flex flex-col justify-between hover:border-primary/50 transition-colors duration-500 shadow-2xl relative"
+                                    className="w-full min-h-[180px] md:min-h-[360px] bg-card-bg border border-foreground/5 rounded-[1rem] md:rounded-[2rem] p-4 md:p-10 flex flex-col justify-between hover:border-primary transition-colors duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.05)] relative"
                                 >
                                     <div>
-                                        <p className="text-white/40 text-[8px] sm:text-xs md:text-base font-bold uppercase tracking-wider mb-1 md:mb-4">Metric 0{idx + 1}</p>
-                                        <h3 className="text-base sm:text-lg md:text-2xl lg:text-4xl font-heading font-bold text-white">{metric.title}</h3>
+                                        <p className="text-foreground/40 text-[8px] sm:text-xs md:text-base font-bold uppercase tracking-wider mb-1 md:mb-4">Metric 0{idx + 1}</p>
+                                        <h3 className="text-base sm:text-lg md:text-2xl lg:text-4xl font-heading font-bold text-foreground">{metric.title}</h3>
                                     </div>
 
                                     <div className="mt-4 md:mt-10">

@@ -54,12 +54,12 @@ export default function AIEngine() {
     };
 
     return (
-        <section className="w-full bg-[#08080A] pt-10 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
+        <section className="w-full bg-background pt-10 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
             {/* 1. STICKY HEADER: Added a solid 'shield' background to prevent card bleed-through */}
-            <div className="sticky top-0 z-[100] w-full bg-[#08080A] py-6 md:py-10 text-center">
+            <div className="sticky top-0 z-[100] w-full bg-background py-6 md:py-10 text-center">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-2 md:mb-4 tracking-tight">The Engine Architecture</h2>
-                    <p className="text-sm md:text-xl text-gray-400 max-w-2xl mx-auto font-medium">Mastering every layer of the modern AI stack to turn frontier technology into industrial reality.</p>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-foreground mb-2 md:mb-4 tracking-tight">The Engine Architecture</h2>
+                    <p className="text-sm md:text-xl text-foreground/70 max-w-2xl mx-auto font-medium">Mastering every layer of the modern AI stack to turn frontier technology into industrial reality.</p>
                 </div>
             </div>
 
@@ -74,17 +74,17 @@ export default function AIEngine() {
                     {cards.map((card, idx) => (
                         <div
                             key={idx}
-                            className="relative md:sticky top-auto md:top-[14rem] min-w-[85vw] md:min-w-0 w-full snap-center bg-[#0c0f1c] border border-white/10 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 flex flex-col justify-center transition-all duration-300 shadow-2xl shrink-0"
+                            className="relative md:sticky top-auto md:top-[14rem] min-w-[85vw] md:min-w-0 w-full snap-center bg-card-bg border border-foreground/5 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 flex flex-col justify-center transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.05)] shrink-0"
                             style={{
                                 zIndex: idx + 10,
                             }}
                         >
                             {/* Internal shield to ensure total opacity */}
-                            <div className="absolute inset-0 bg-[#0c0f1c] rounded-[1.5rem] md:rounded-[2rem] -z-10"></div>
+                            <div className="absolute inset-0 bg-card-bg rounded-[1.5rem] md:rounded-[2rem] -z-10 shadow-sm"></div>
 
                             <div className="text-4xl md:text-5xl mb-4">{card.icon}</div>
-                            <h3 className="text-xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-3 md:mb-4">{card.title}</h3>
-                            <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed font-light">{card.description}</p>
+                            <h3 className="text-xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 md:mb-4">{card.title}</h3>
+                            <p className="text-sm md:text-lg text-text-secondary mb-6 md:mb-8 max-w-2xl font-sans leading-relaxed">{card.description}</p>
                         </div>
                     ))}
                 </div>
@@ -93,14 +93,14 @@ export default function AIEngine() {
                 <div className="flex md:hidden items-center justify-center gap-4 mt-2 mb-4 w-full px-4">
                     <button
                         onClick={scrollLeft}
-                        className={`p-2 rounded-full border border-white/20 bg-white/5 text-white transition-opacity duration-300 ${!canScrollLeft ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                        className={`p-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground transition-opacity duration-300 ${!canScrollLeft ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
                         aria-label="Scroll left"
                     >
                         <ChevronLeft size={20} />
                     </button>
                     <button
                         onClick={scrollRight}
-                        className={`p-2 rounded-full border border-white/20 bg-white/5 text-white transition-opacity duration-300 ${!canScrollRight ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+                        className={`p-2 rounded-full border border-foreground/10 bg-foreground/5 text-foreground transition-opacity duration-300 ${!canScrollRight ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
                         aria-label="Scroll right"
                     >
                         <ChevronRight size={20} />
