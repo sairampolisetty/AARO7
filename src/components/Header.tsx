@@ -20,8 +20,10 @@ export default function Header() {
         let scrollTimeout: NodeJS.Timeout;
 
         const handleScroll = () => {
-            // If the mobile menu is open, don't hide the navbar on scroll
-            if (isMobileMenuOpen) return;
+            // Close mobile menu on scroll
+            if (isMobileMenuOpen) {
+                setIsMobileMenuOpen(false);
+            }
 
             // Hide while scrolling
             setIsVisible(false);
