@@ -9,6 +9,7 @@ import WhyUs from "@/components/WhyUs";
 import Founder from "@/components/Founder";
 import FooterCTA from "@/components/FooterCTA";
 import Popup from "@/components/Popup";
+import BookingModal from "@/components/BookingModal";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Founder />
       <FooterCTA />
       <Popup />
+      <BookingModal />
     </main>
   );
 }

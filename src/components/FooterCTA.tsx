@@ -20,7 +20,7 @@ export default function FooterCTA() {
                 </p>
 
                 <MagneticButton>
-                    <a href="#" className="group relative flex items-center justify-center gap-3 md:gap-4 bg-primary text-white font-bold text-sm md:text-xl py-4 px-8 md:py-6 md:px-12 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
+                    <a href="#book" className="group relative flex items-center justify-center gap-3 md:gap-4 bg-primary text-white font-bold text-sm md:text-xl py-4 px-8 md:py-6 md:px-12 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
                         <span className="relative z-10 flex items-center gap-2 md:gap-3 transition-colors duration-300">
                             Schedule a Consultation
                             <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />

@@ -147,7 +147,7 @@ export default function Header() {
                                 {link.name}
                             </a>
                         ))}
-                        <a href="#" className="sm:hidden mt-2 inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-base px-6 py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none w-full text-center tracking-wide">
+                        <a href="#book" className="sm:hidden mt-2 inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-base px-6 py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none w-full text-center tracking-wide">
                             Book audit
                         </a>
                     </nav>
