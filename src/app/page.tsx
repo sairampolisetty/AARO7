@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import WhyUs from "@/components/WhyUs";
 import Founder from "@/components/Founder";
 import FooterCTA from "@/components/FooterCTA";
+import Popup from "@/components/Popup";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <WhyUs />
       <Founder />
       <FooterCTA />
+      <Popup />
     </main>
   );
 }
