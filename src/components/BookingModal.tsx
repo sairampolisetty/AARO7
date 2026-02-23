@@ -59,8 +59,8 @@ export default function BookingModal() {
 
     const handleClose = () => {
         setIsOpen(false);
-        // Remove hash without scrolling
-        history.pushState("", document.title, window.location.pathname + window.location.search);
+        // Remove hash without scrolling. Pass null for state to fix Next.js TypeError
+        history.pushState(null, document.title, window.location.pathname + window.location.search);
         setTimeout(() => setIsRendered(false), 500);
 
         // Reset form state after close

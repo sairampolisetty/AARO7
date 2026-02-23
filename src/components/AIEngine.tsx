@@ -57,9 +57,9 @@ export default function AIEngine() {
     };
 
     return (
-        <section id="architecture" className="w-full bg-background pt-10 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
-            {/* 1. STICKY HEADER: Added a solid 'shield' background to prevent card bleed-through */}
-            <div className="sticky top-0 z-[100] w-full bg-background py-6 md:py-10 text-center">
+        <section id="architecture" className="w-full bg-gradient-to-b from-background via-primary/5 to-background pt-2 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
+            {/* 1. STICKY HEADER: Glassmorphism effect instead of flat white, reduced padding on mobile */}
+            <div className="sticky top-0 z-[100] w-full bg-background/80 backdrop-blur-xl border-b border-primary/10 shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-4 md:py-10 text-center transition-all">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-foreground mb-2 md:mb-4 tracking-tight">The Engine Architecture</h2>
                     <p className="text-sm md:text-xl text-foreground/70 max-w-2xl mx-auto font-medium">Mastering every layer of the modern AI stack to turn frontier technology into industrial reality.</p>
@@ -81,17 +81,17 @@ export default function AIEngine() {
                     {cards.map((card, idx) => (
                         <div
                             key={idx}
-                            className="relative md:sticky top-auto md:top-[14rem] min-w-[85vw] md:min-w-0 w-full snap-center bg-card-bg border border-foreground/5 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-10 flex flex-col justify-center transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.05)] shrink-0"
+                            className="relative md:sticky top-auto md:top-[14rem] min-w-[85vw] md:min-w-0 w-full snap-center bg-card-bg border border-primary/10 rounded-[1.25rem] md:rounded-[2rem] py-5 px-6 md:p-10 flex flex-col justify-center transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgba(255,87,51,0.1)] hover:border-primary/30 shrink-0"
                             style={{
                                 zIndex: idx + 10,
                             }}
                         >
                             {/* Internal shield to ensure total opacity */}
-                            <div className="absolute inset-0 bg-card-bg rounded-[1.5rem] md:rounded-[2rem] -z-10 shadow-sm"></div>
+                            <div className="absolute inset-0 bg-card-bg rounded-[1.25rem] md:rounded-[2rem] -z-10 shadow-sm"></div>
 
-                            <div className="text-4xl md:text-5xl mb-4">{card.icon}</div>
-                            <h3 className="text-xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-3 md:mb-4">{card.title}</h3>
-                            <p className="text-sm md:text-lg text-text-secondary mb-6 md:mb-8 max-w-2xl font-sans leading-relaxed">{card.description}</p>
+                            <div className="text-3xl md:text-5xl mb-2 md:mb-4">{card.icon}</div>
+                            <h3 className="text-lg md:text-3xl lg:text-4xl font-heading font-bold text-foreground mb-1.5 md:mb-3">{card.title}</h3>
+                            <p className="text-sm md:text-lg text-text-secondary md:mb-8 max-w-2xl font-sans leading-relaxed">{card.description}</p>
                         </div>
                     ))}
                 </div>
