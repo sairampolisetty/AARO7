@@ -115,7 +115,14 @@ export default function Header() {
 
                     {/* CTA & Mobile Toggle */}
                     <div className="flex items-center gap-3 md:gap-4">
-                        <a href="#" className="hidden sm:inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-xs md:text-sm px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none whitespace-nowrap">
+                        <a
+                            href="#book"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                window.dispatchEvent(new Event('openBookingModal'));
+                            }}
+                            className="hidden sm:inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-xs md:text-sm px-5 py-2.5 md:px-6 md:py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none whitespace-nowrap"
+                        >
                             Book audit
                         </a>
 
@@ -147,7 +154,15 @@ export default function Header() {
                                 {link.name}
                             </a>
                         ))}
-                        <a href="#book" className="sm:hidden mt-2 inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-base px-6 py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none w-full text-center tracking-wide">
+                        <a
+                            href="#book"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setIsMobileMenuOpen(false);
+                                window.dispatchEvent(new Event('openBookingModal'));
+                            }}
+                            className="sm:hidden mt-2 inline-flex items-center justify-center bg-primary text-white font-bold font-sans text-base px-6 py-3 rounded-full hover:bg-foreground hover:text-white transition-colors duration-300 shadow-md outline-none w-full text-center tracking-wide"
+                        >
                             Book audit
                         </a>
                     </nav>

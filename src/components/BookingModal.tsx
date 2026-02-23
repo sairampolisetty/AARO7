@@ -18,10 +18,15 @@ export default function BookingModal() {
 
     // Listen for hash changes to open the modal
     useEffect(() => {
+        const handleOpen = () => {
+            setIsRendered(true);
+            // Wait for next tick so CSS transitions can catch the DOM element
+            setTimeout(() => setIsOpen(true), 50);
+        };
+
         const checkHash = () => {
             if (window.location.hash === "#book") {
-                setIsRendered(true);
-                setTimeout(() => setIsOpen(true), 50);
+                handleOpen();
             } else {
                 setIsOpen(false);
                 setTimeout(() => setIsRendered(false), 500); // Wait for exit animation
@@ -32,7 +37,12 @@ export default function BookingModal() {
         checkHash();
 
         window.addEventListener("hashchange", checkHash);
-        return () => window.removeEventListener("hashchange", checkHash);
+        window.addEventListener("openBookingModal", handleOpen);
+
+        return () => {
+            window.removeEventListener("hashchange", checkHash);
+            window.removeEventListener("openBookingModal", handleOpen);
+        };
     }, []);
 
     // Handle body scroll locking

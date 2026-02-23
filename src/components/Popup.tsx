@@ -77,7 +77,11 @@ export default function Popup() {
 
                 <a
                     href="#book"
-                    onClick={handleClose}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleClose();
+                        window.dispatchEvent(new Event('openBookingModal'));
+                    }}
                     className="w-full bg-primary text-white font-bold font-sans text-base px-6 py-4 rounded-full hover:bg-primary/90 hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-[0_0_20px_rgba(255,87,51,0.4)]"
                 >
                     Book Your Strategy Session
