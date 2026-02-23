@@ -20,8 +20,10 @@ export default function BookingModal() {
     useEffect(() => {
         const handleOpen = () => {
             setIsRendered(true);
-            // Wait for next tick so CSS transitions can catch the DOM element
-            setTimeout(() => setIsOpen(true), 50);
+            // Guarantee the browser paints the initial closed state before transitioning
+            requestAnimationFrame(() => {
+                setTimeout(() => setIsOpen(true), 100);
+            });
         };
 
         const checkHash = () => {
