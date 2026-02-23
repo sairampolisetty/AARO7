@@ -36,7 +36,7 @@ export default function Founder() {
     const prevSlide = () => setActiveIndex((current) => (current - 1 + founders.length) % founders.length);
 
     return (
-        <section className="w-full bg-background py-12 md:py-20 px-4 md:px-6 relative z-10 border-t border-foreground/5 flex items-center justify-center overflow-hidden">
+        <section id="leadership" className="w-full bg-background py-12 md:py-20 px-4 md:px-6 relative z-10 border-t border-foreground/5 flex items-center justify-center overflow-hidden">
             {/* Decorative background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-primary/10 blur-[150px] rounded-full z-0 pointer-events-none"></div>
 

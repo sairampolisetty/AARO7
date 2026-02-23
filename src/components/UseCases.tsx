@@ -85,7 +85,7 @@ export default function UseCases() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-full bg-background py-8 md:py-10 border-y border-foreground/5 relative z-20 overflow-hidden">
+        <section id="impact" ref={sectionRef} className="w-full bg-background py-8 md:py-10 border-y border-foreground/5 relative z-20 overflow-hidden">
             <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
                 <div className="mb-6 md:mb-20 text-center w-full px-4 md:px-6">
                     <h2 className="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-heading font-black text-foreground leading-tight">Proven Impact.</h2>

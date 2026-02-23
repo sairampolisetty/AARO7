@@ -26,7 +26,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
+        <section id="home" className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-background">
             {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-30"

@@ -50,7 +50,7 @@ export default function Products() {
     };
 
     return (
-        <section className="w-full bg-background py-8 md:py-20 px-4 md:px-6 relative z-10 flex flex-col items-center border-t border-foreground/5 overflow-hidden">
+        <section id="products" className="w-full bg-background py-8 md:py-20 px-4 md:px-6 relative z-10 flex flex-col items-center border-t border-foreground/5 overflow-hidden">
             <div className="max-w-7xl mx-auto w-full">
                 <div className="text-center mb-6 md:mb-20">
                     <p className="text-[10px] md:text-sm text-primary tracking-widest font-sans font-medium uppercase mb-2 md:mb-4">Innovation Lab</p>

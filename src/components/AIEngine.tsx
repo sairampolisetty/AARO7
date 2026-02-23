@@ -54,7 +54,7 @@ export default function AIEngine() {
     };
 
     return (
-        <section className="w-full bg-background pt-10 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
+        <section id="architecture" className="w-full bg-background pt-10 md:pt-24 pb-12 md:pb-20 relative z-10 flex flex-col items-center">
             {/* 1. STICKY HEADER: Added a solid 'shield' background to prevent card bleed-through */}
             <div className="sticky top-0 z-[100] w-full bg-background py-6 md:py-10 text-center">
                 <div className="max-w-7xl mx-auto px-4 md:px-6">
